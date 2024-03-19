@@ -1,42 +1,61 @@
 .sidebar {
-    width: 200px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #f0f0f0;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease;
-  }
-  
-  .sidebar.minimized {
-    width: 40px;
-  }
-  
-  .content,
-  .content-minimized {
-    transition: opacity 0.3s ease;
-  }
-  
-  .toggle-btn {
-    cursor: pointer;
-    text-align: center;
-    padding: 5px;
-    background-color: #ccc;
-    border-top: 1px solid #999;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .toggle-btn:hover {
-    background-color: #bbb;
-  }
-  
-  .content ul,
-  .content-minimized ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-  }
-  
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #456990; /* Darker blue */
+  color: #fff; /* White text */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+}
+
+.sidebar.minimized {
+  width: 40px;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  background-color: #7b9ea5; 
+  border-top: 1px solid #999;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.toggle-btn:hover {
+  background-color: #5c7e84; 
+}
+
+.content,
+.content-minimized {
+  transition: opacity 0.3s ease;
+}
+
+.content ul,
+.content-minimized ul {
+  list-style: none; 
+  padding: 0;
+}
+
+.content a,
+.content-minimized a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #fff; 
+  border-radius: 4px; 
+}
+
+.content li > svg {
+  margin-right: 8px; 
+}
+
+.content a:hover,
+.content-minimized a:hover,
+.content li:hover > svg {
+  background-color: rgba(255, 255, 255, 0.1); 
+}
