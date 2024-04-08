@@ -1,0 +1,140 @@
+
+.search-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px;
+}
+
+
+
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: space-between;
+}
+.Art{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 40px;
+
+}
+
+.card {
+    margin-top: 40px;
+    position: relative;
+    width: 400px;
+    background-color: #446c94;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    padding-right: 10px;
+    margin-left: 100px;
+    
+    
+    
+}
+
+.card:last-child {
+    margin-left: 0px;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    
+}
+.H2{
+    padding: 10px;
+    margin: 0;
+    font-size: 20px;
+}
+.card h2 {
+    padding: 10px;
+    margin: 0;
+    font-size: 20px;
+}
+
+.card p {
+    padding: 0 10px 10px 10px;
+    margin: 0;
+    font-size: 16px;
+}
+
+.card a {
+    display: block;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.card a:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.custom-button {
+    font-family: inherit;
+    font-size: 15px;
+    background: #2f4b67;
+    color: white;
+    fill: #95afc0;
+    padding: 0.5em 2em;
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    font-weight: 1000;
+}
+
+.custom-button span {
+    display: block;
+    margin-left: 0.5em;
+    /* Ajuste del margen izquierdo para el texto */
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-button:hover {
+    background: #1b2b3b;
+}
+
+.custom-button:hover .svg-wrapper {
+    transform: scale(1.25);
+    transition: 0.5s linear;
+}
+
+.custom-button:hover svg {
+    transform: translateX(1.5em) scale(1.1);
+    fill: #fff;
+}
+
+.custom-button:hover span {
+    opacity: 0;
+    transition: 0.5s linear;
+}
+
+.custom-button:active {
+    transform: scale(0.95);
+}
+

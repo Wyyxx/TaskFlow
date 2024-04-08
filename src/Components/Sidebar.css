@@ -19,6 +19,9 @@
   cursor: pointer;
   text-align: center;
   padding: 5px;
+
+  background-color: #7b9ea5; 
+
   border-top: 1px solid #999;
   position: absolute;
   right: 0;
@@ -26,7 +29,11 @@
 }
 
 .toggle-btn:hover {
+
+  background-color: #5c7e84; 
+
   background-color: #3f96a6; 
+
 }
 
 .content,

@@ -1,4 +1,13 @@
 
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./Components/Sidebar";
+import SearchPage from "./Components/SearchPage";
+import ReadLaterPage from "./Components/ReadLaterPage"; 
+import "./Components/SearchPage.css";
+
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/header';
@@ -25,8 +34,19 @@ import './App.css';
 import Sidebar from './Components/Sidebar';
 
 
+
   return (
     <Router>
+
+      <div className="app">
+        <Sidebar />
+        <Routes>
+          <Route path="/Busqueda" element={<SearchPage />} />
+          <Route path="/MasTarde" element={<ReadLaterPage />} /> 
+        </Routes>
+      </div>
+    </Router>
+
       <div>
         <Header /> {/* Utiliza el componente de encabezado */}
         <Navbar /> {/* Utiliza el componente Navbar */}
@@ -43,6 +63,7 @@ import Sidebar from './Components/Sidebar';
       </div>
     </Router>
     <Sidebar></Sidebar>
+
   );
 };;
 
