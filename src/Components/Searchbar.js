@@ -1,19 +1,27 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import "./SearchBar.css";
 
-function Searchbar() {
+function SearchBar({ searchQuery, setSearchQuery, handleSearch }) {
+    
+ 
+
     return (
-        <div className="searchBox">
-            <input className="searchInput" type="text" placeholder="Buscar..." />
-            <button className="searchButton" type="button">
-                <FontAwesomeIcon icon={faSearch} />
+        <div className="search">
+            <input
+                type="text"
+                className="search-input"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button
+                type="submit"
+                onClick={(e) => handleSearch(searchQuery)}
+            >
+                Go
             </button>
         </div>
     );
 }
 
-
-export default Searchbar;
-
-
+export default SearchBar;

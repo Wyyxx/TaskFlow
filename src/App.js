@@ -6,6 +6,8 @@ import SearchPage from "./Components/SearchPage";
 import ReadLaterPage from "./Components/ReadLaterPage"; 
 import "./Components/SearchPage.css";
 
+
+
 function App() {
   return (
     <Router>

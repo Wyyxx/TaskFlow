@@ -1,91 +1,71 @@
-import React from "react";
-import SearchBar from "./Searchbar";
-import "./SearchPage.css";
+import React, { useState } from "react";
+import axios from "axios";
+import SearchBar from "./Searchbar"; 
 
 function SearchPage() {
-    return (
-        <div>
-            <div className="search-page">
-                
-                <SearchBar />
-            </div>
-            <header className="header">
-                
-            </header>
-            <main className="main">
-                <article className="entry entry-lede">
-                    <img className="entry-img" src="https://assets.codepen.io/467/horse02.jpg" alt="A handsome young horse in front of an expansive sky" />
-                    <div className="entry-content">
-                        <h1 className="entry-headline primary-headline">This horse sure knows how to code</h1>
-                        <time className="entry-date meta">January 24, 2021</time>
-                        <span className="entry-byline meta">by Alex Trost</span>
-                        <p className="entry-summary">Aliquam justo enim, mollis a justo et, sagittis vulputate turpis. Nulla facilisi. Proin quis mattis ipsum, eu eleifend dolor. Nulla auctor ex vel ipsum varius viverra. Vestibulum convallis elit nec quam bibendum varius. Morbi ut mattis dui. Aenean a massa vitae magna commodo consequat. Duis ac lacus.</p>
-                    </div>
-                </article>
-                <article className="entry">
-                    <img className="entry-img" src="https://assets.codepen.io/467/horse03.jpg" alt="The profile view of three majestic brown horses" />
-                    <h1 className="entry-headline primary-headline">Trost’s tolt trots to TypeScript</h1>
-                    <time className="entry-date meta">January 24, 2021</time>
-                    <span className="entry-byline meta">by Alex Trost</span>
-                    <p className="entry-summary">Cras mollis dolor vitae tellus sollicitudin, quis sagittis mauris dictum. Donec aliquet ipsum et ex pulvinar, id vestibulum lectus egestas. Vestibulum non ultrices mauris, nec elementum mauris. Donec aliquet ipsum at risus vulputate viverra.</p>
-                </article>
-                <article className="entry">
-                    <img className="entry-img" src="https://assets.codepen.io/467/horse01.jpg" alt="The profile view of three majestic brown horses" />
-                    <h1 className="entry-headline primary-headline">This team of three does front end magic</h1>
-                    <time className="entry-date meta">January 24, 2021</time>
-                    <span className="entry-byline meta">by Alex Trost</span>
-                    <p className="entry-summary">Mauris ut volutpat quam. Duis vitae turpis volutpat dolor efficitur rhoncus. Aenean lacinia est non porta dictum. Curabitur cursus mauris est, nec pharetra nisi imperdiet eget. Suspendisse non ultricies ligula.</p>
-                </article>
-                <section className="trending">
-                    <article className="trending-entry">
-                        <time className="trending-entry-date meta">January 24, 2021</time>
-                        <h1 className="trending-entry-headline primary-headline">Gallop into the amazing new world of CSS</h1>
-                    </article>
-                    <article className="trending-entry">
-                        <time className="trending-entry-date meta">January 24, 2021</time>
-                        <h1 className="trending-entry-headline primary-headline">Horse around with new HTML5 tags</h1>
-                    </article>
-                    <article className="trending-entry">
-                        <time className="trending-entry-date meta">January 24, 2021</time>
-                        <h1 className="trending-entry-headline primary-headline">Five featured fonts of front end horse</h1>
-                    </article>
-                    <article className="trending-entry">
-                        <time className="trending-entry-date meta">January 24, 2021</time>
-                        <h1 className="trending-entry-headline primary-headline">Saddle up with Rust</h1>
-                    </article>
-                </section>
-            </main>
-            <button>
-                <div class="text">
-                    <span>Guardar</span>
-                   
-                    
-                </div>
-                <div class="clone">
-                    <span>Guardar</span>
-                   
-                    
-                </div>
-                <svg
-                    stroke-width="2"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
-                >
-                    <path
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                    ></path>
-                </svg>
-            </button>
+    const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
 
+    const handleSearch = async () => {
+        try {
+            const response = await axios.get(
+                `https://newsapi.org/v2/everything?q=${searchQuery}&language=es&apiKey=36494067a5d144d3aa11d4ef2c5b71f7`
+            );
+
+            setSearchResults(response.data.articles);
+        } catch (error) {
+            console.error("Error al realizar la búsqueda:", error);
+        }
+    };
+
+    const saveForLater = (article) => {
+        const savedArticles = JSON.parse(localStorage.getItem("savedArticles")) || [];
+        savedArticles.push(article);
+        localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
+    };
+
+    return (
+        <div className="search-page">
+            <h1 className="H11">Busqueda de noticias</h1>
+            <div className="rectangulo"></div>
+            <SearchBar
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                handleSearch={handleSearch}
+            />
+            <p className="small-text">Emplea términos clave para localizar la noticia que desees obtener información.</p>
+            <div className="search-results">
+                {searchResults.map((article, index) => (
+                    <div className="card" key={index}>
+                        <img src={article.urlToImage} alt={article.title} />
+                        <h2>{article.title}</h2>
+                        <p>{article.description}</p>
+                        <a href={article.url} target="_blank" rel="noopener noreferrer">
+                            Leer más
+                        </a>
+                        <button onClick={() => saveForLater(article)} className="custom-button">
+                            <div className="svg-wrapper-1">
+                                <div className="svg-wrapper">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        width="30"
+                                        height="30"
+                                        className="icon"
+                                    >
+                                        <path
+                                            d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span>Save</span>
+                        </button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
 
 export default SearchPage;
-
