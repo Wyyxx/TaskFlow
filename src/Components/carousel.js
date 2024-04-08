@@ -20,7 +20,7 @@ const Carousel = ({ images }) => {
       <img 
         src={require(`../img/${images[currentIndex]}`)} 
         alt={`Slide ${currentIndex + 1}`} 
-        style={{ width: '100%', height: 'auto' }} // Set fixed dimensions
+        style={{ width: '100%', height: 'auto' }}
       />
       <button onClick={nextSlide}>Siguiente</button>
     </div>

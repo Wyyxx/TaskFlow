@@ -30,4 +30,208 @@ header {
   nav ul li a:hover {
     text-decoration: underline; 
   }
+
+  .news-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
   
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .news-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .news-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .news-link:hover {
+    color: #007bff;
+  }
+  
+  .news-image {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .news-title {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .news-description {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .home-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .news-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .news-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .categories {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .categories li {
+    margin-bottom: 10px;
+  }
+  
+  .categories li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #023047;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .categories li a:hover {
+    background-color: #001f38;
+  }
+  
+  .latest-news {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .latest-news li {
+    margin-bottom: 10px;
+  }
+  .salud-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .salud-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .salud-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .salud-card h3 {
+    margin-top: 10px;
+  }
+  
+  .salud-card p {
+    margin-top: 10px;
+  }
+  .tecnologia-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .tecnologia-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .tecnologia-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .tecnologia-card h3 {
+    margin-top: 10px;
+  }
+  
+  .tecnologia-card p {
+    margin-top: 10px;
+  }
+  .deportes-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .deportes-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .deportes-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .deportes-card h3 {
+    margin-top: 10px;
+  }
+  
+  .deportes-card p {
+    margin-top: 10px;
+  }
+  .entretenimiento-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .entretenimiento-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .entretenimiento-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .entretenimiento-card h3 {
+    margin-top: 10px;
+  }
+  
+  .entretenimiento-card p {
+    margin-top: 10px;
+  }
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin: 0;
+  }

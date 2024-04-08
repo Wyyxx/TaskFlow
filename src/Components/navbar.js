@@ -13,11 +13,10 @@ const Navbar = () => {
   return (
     <nav style={styles.nav}>
       <ul>
-        <li><a href="/espectaculos">Espectáculos</a></li>
-        <li><a href="/politica">Política</a></li>
-        <li><a href="/cultura">Cultura</a></li>
-        <li><a href="/tendencias">Tendencias</a></li>
-        <li><a href="/ciencia-salud">Ciencia y Salud</a></li>
+        <li><a href="/salud">Salud</a></li>
+        <li><a href="/tecnologia">Tecnología</a></li>
+        <li><a href="/deportes">Deportes</a></li>
+        <li><a href="/entretenimiento">Entretenimiento</a></li>
       </ul>
     </nav>
   );
