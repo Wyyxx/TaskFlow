@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/header';
@@ -20,6 +21,10 @@ const App = () => {
     'imagen3.jpg',
   ];
 
+import './App.css';
+import Sidebar from './Components/Sidebar';
+
+
   return (
     <Router>
       <div>
@@ -37,6 +42,7 @@ const App = () => {
         <Footer /> {/* Utiliza el componente Footer */}
       </div>
     </Router>
+    <Sidebar></Sidebar>
   );
 };;
 
